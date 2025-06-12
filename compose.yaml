@@ -2,9 +2,14 @@ services:
   baikal:
     image: ckulka/baikal:nginx
     restart: always
-    ports:
-      - "80:80"
+    networks:
+      - nginx
     volumes:
       - ./config:/var/www/baikal/config
       - ./data:/var/www/baikal/Specific
 
+networks:
+  nginx:
+    external: true
+    name: nginx
+  local:
