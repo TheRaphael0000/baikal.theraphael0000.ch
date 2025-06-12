@@ -1,5 +1,6 @@
 services:
   baikal:
+    container_name: baikal
     image: ckulka/baikal:nginx
     restart: always
     networks:
